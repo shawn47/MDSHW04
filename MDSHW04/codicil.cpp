@@ -2,7 +2,6 @@
 #include <string>
 #include "vertex.h"
 #include "graph.h"
-#include "markov_clustering.h"
 
 using namespace std;
 
