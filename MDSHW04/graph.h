@@ -42,5 +42,6 @@ public:
 	void write2file();
 	void writeVertexTopK2File();
 	vector<vector<double>> sample2Matrix();
+	void sample2file();
 };
 #endif

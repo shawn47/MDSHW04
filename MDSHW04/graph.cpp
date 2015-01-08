@@ -19,6 +19,32 @@ bool operator<(const PAIR &x, const PAIR &y)
     return x.sim > y.sim;
 }
 
+void Graph:: sample2file() {
+	char filename[] = "small.mci";
+	ofstream fout(filename);
+	string s="(mclheader\nmcltypematrix\ndimensions 12x12\n)\n(mclmatrix\nbegin\n";
+	fout<<s;
+	
+	int i = 0, j = 0;
+	
+	for (i = 0; i < this->numV; i++) {
+		if (i > 0)
+			fout<<endl;
+		fout<<i<<" ";
+		for (j = 0; j < this->numV; j++) {
+			if (this->sample[i][j] == 1) {
+				fout<<j<<" ";
+			}
+		}
+		fout<<" \$";
+	}
+	fout<<endl;
+	s=")";
+	fout<<s;
+	
+	fout.close();
+}
+
 void Graph::write2file() {
 	char filename[] = "E:\\作业\\现代数据库系统概论\\hw4\\618506165_6_Project4\\citeseer\\sampleEdge.bin";
 	ofstream fout(filename);
